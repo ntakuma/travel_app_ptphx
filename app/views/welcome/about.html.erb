@@ -1,0 +1,22 @@
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
+
+
+<h1>Welcome#about</h1>
+<p>Find me in app/views/welcome/about.html.erb</p>
+<p>My favorite color is <%= @color %></p>
+
+
+<% if params[:size] %>
+  <% if @size.to_i < 12 %>
+   <p>My shoe size is <%= @size %></p>
+  <% else %>
+    <p>Wow, size <%= @size %>? Your feet are huge!</p>
+  <% end %>
+<% end %>
+
+<%= link_to "Blue", about_path(color: 'blue'), class: "btn btn-primary" %>
+<%= link_to "Red", about_path(color: 'red'), class: "btn btn-danger" %>
